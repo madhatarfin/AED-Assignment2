@@ -1,0 +1,70 @@
+package model;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class Hospital {
+    private String name;
+    private PatientDirectory patientDirectory;
+    private PersonDirectory personDirectory;
+    private DoctorDirectory doctorDirectory;
+    
+
+    public Hospital(String name){
+        this.name = name;
+        patientDirectory = new PatientDirectory();
+        personDirectory = new PersonDirectory(this);
+        doctorDirectory = new DoctorDirectory();
+        
+    }
+    public void printClinic(){
+        System.out.println("Hopital Name:" + name);
+    }
+
+    public PersonDirectory getPersonDirectory() {
+
+        return personDirectory;
+    }
+
+    public void setPersonDirectory(PersonDirectory personDirectory) {
+
+        this.personDirectory = personDirectory;
+    }
+
+    public DoctorDirectory getDoctorDirectory() {
+        return doctorDirectory;
+    }
+
+    public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
+        this.doctorDirectory = doctorDirectory;
+    }
+    
+    
+
+   // public PatientProfile newPatient(String name, String dateOfBirth){
+     //   Person person = personDirectory.newPerson(name, dateOfBirth);
+        //PatientProfile patient = patientDirectory.newPatient(person);
+       // return patient;
+    //}
+    //public int getPatientCount(){
+      // return patientDirectory.getPatientCount();
+    //}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory;
+    }
+
+    public void setPatientDirectory(PatientDirectory patientDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
+    
+}
