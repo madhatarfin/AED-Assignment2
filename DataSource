@@ -1,0 +1,117 @@
+package model;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class DataSource {
+
+    private static DataSource dataSource;
+
+    private DataSource() {
+    }
+
+    public static DataSource getInstance() {
+        if (dataSource == null) {
+            dataSource = new DataSource();
+            //TODO: Initialize city data as per hospitals and doctors
+            City city1 = new City("Boston1");
+            Community community1=new Community("Com1");
+            city1.setCommunities(new HashSet(Arrays.asList(community1)));
+            Hospital hospital1 = new Hospital("Apollo Hospital");
+            community1.setHospital(new HashSet(Arrays.asList(hospital1)));
+            
+            City city2 = new City("New York1");
+            Community community2=new Community("Com2");
+            city2.setCommunities(new HashSet(Arrays.asList(community2)));
+            Hospital hospital2 = new Hospital("Nursing Hospital");
+            community2.setHospital(new HashSet(Arrays.asList(hospital2)));
+            
+            City city3 = new City("Chicago1");
+            Community community3=new Community("Com3");
+            city3.setCommunities(new HashSet(Arrays.asList(community3)));
+            Hospital hospital3 = new Hospital("Best Hospital");
+            community3.setHospital(new HashSet(Arrays.asList(hospital3)));
+            
+            City city4 = new City("Washington1");
+            Community community4 =new Community("Com4");
+            city4.setCommunities(new HashSet(Arrays.asList(community4)));
+            Hospital hospital4 = new Hospital("State Hospital");
+            community4.setHospital(new HashSet(Arrays.asList(hospital4)));
+            
+            DoctorDirectory h = hospital1.getDoctorDirectory();
+            Doctor doctor = h.addNewDoctor("Arf", 34, "M", "Pediatricians");
+            Doctor doctor1 = h.addNewDoctor("Tim", 29, "M", "Neurologists");
+            Doctor doctor2 = h.addNewDoctor("Jim", 45, "F", "Radiologists");
+            Doctor doctor3 = h.addNewDoctor("Mike", 68, "F", "Family physicians");
+            
+            
+            DoctorDirectory h1 = hospital2.getDoctorDirectory();
+            Doctor doctor4 = h1.addNewDoctor("Tony", 34, "F", "Pediatricians");
+            Doctor doctor5 = h1.addNewDoctor("Timothy", 34, "M", "Pediatricians");
+            Doctor doctor6 = h1.addNewDoctor("June", 34, "F", "Pediatricians");
+            Doctor doctor7 = h1.addNewDoctor("April", 34, "M", "Pediatricians");
+            
+            DoctorDirectory h2 = hospital3.getDoctorDirectory();
+            Doctor doctor8 = h2.addNewDoctor("Johny", 34, "M", "Pediatricians");
+            Doctor doctor9 = h2.addNewDoctor("Christy", 34, "F", "Pediatricians");
+            Doctor doctor10 = h2.addNewDoctor("Mandy", 34, "F", "Pediatricians");
+            Doctor doctor11 = h2.addNewDoctor("Joe", 34, "M", "Pediatricians");
+            
+            DoctorDirectory h3 = hospital4.getDoctorDirectory();
+            Doctor doctor12 = h3.addNewDoctor("Ricky", 34, "M", "Pediatricians");
+            Doctor doctor13 = h3.addNewDoctor("Sean", 34, "M", "Pediatricians");
+            Doctor doctor14 = h3.addNewDoctor("Juan", 34, "F", "Pediatricians");
+            Doctor doctor15 = h3.addNewDoctor("Tracy", 34, "F", "Pediatricians");
+            
+            PatientDirectory pd = hospital1.getPatientDirectory();
+            Patient patient = pd.addNewPatient("PI1", "Cindy", 23);
+            Patient patient1 = pd.addNewPatient("PI2", "Terrace", 80);
+            Patient patient2 = pd.addNewPatient("PI3", "Judy", 60);
+            Patient patient3 = pd.addNewPatient("PI4", "Judy", 60);
+            
+            PatientDirectory pd1 = hospital2.getPatientDirectory();
+            Patient patient4 = pd1.addNewPatient("PI1", "Cindy", 23);
+            Patient patient5 = pd1.addNewPatient("PI2", "Terrace", 80);
+            Patient patient6 = pd1.addNewPatient("PI3", "Judy", 60);
+            Patient patient7 = pd1.addNewPatient("PI4", "Judy", 60);
+            
+            PatientDirectory pd2 = hospital3.getPatientDirectory();
+            Patient patient8 = pd2.addNewPatient("PI1", "Cindy", 23);
+            Patient patient9 = pd2.addNewPatient("PI2", "Terrace", 80);
+            Patient patient10 = pd2.addNewPatient("PI3", "Judy", 60);
+            Patient patient11 = pd2.addNewPatient("PI4", "Judy", 60);
+            
+            PatientDirectory pd3 = hospital4.getPatientDirectory();
+            Patient patient12 = pd3.addNewPatient("PI1", "Cindy", 23);
+            Patient patient13 = pd3.addNewPatient("PI2", "Terrace", 80);
+            Patient patient14 = pd3.addNewPatient("PI3", "Judy", 60);
+            Patient patient15 = pd3.addNewPatient("PI4", "Judy", 60);
+            
+            
+            
+           Set<City> cityDetails = new HashSet();
+           cityDetails.add(city1);
+           cityDetails.add(city2);
+           cityDetails.add(city3);
+           cityDetails.add(city4);
+           dataSource.setCitySet(cityDetails);
+        }
+        return dataSource;
+    }
+
+    private Set<City> citySet = new HashSet();
+
+    public Set<City> getCitySet() {
+        return citySet;
+    }
+
+    public void setCitySet(Set<City> citySet) {
+        this.citySet = citySet;
+    }
+
+}
