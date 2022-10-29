@@ -1,0 +1,16 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class HospitalDirectory {
+     public HospitalDirectory(Hospital h) {
+        Set<Person> persons = new HashSet<Person>();
+        Hospital hospital = h;
+    }
+}
