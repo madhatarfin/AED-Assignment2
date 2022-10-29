@@ -1,0 +1,60 @@
+package model;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class Doctor {
+    String doctorName;
+    int age;
+    String gender;
+    String specialist;
+    
+    public Doctor(String doctorName, int age, String gender, String specialist){
+        this.doctorName = doctorName;
+        this.age = age;
+        this.gender = gender;
+        this.specialist = specialist;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getSpecialist() {
+        return specialist;
+    }
+
+    public void setSpecialist(String specialist) {
+        this.specialist = specialist;
+    }
+
+    public Doctor() {
+        System.out.println("Doctor Name: " + doctorName);
+    }  
+    
+    @Override
+    public String toString(){
+        return doctorName;
+    }
+}
