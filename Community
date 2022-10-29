@@ -1,0 +1,49 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class Community {
+       String name;
+       int houses;
+    Set<Hospital> hospital;
+
+    public int getHouses() {
+        return houses;
+    }
+
+    public void setHouses(int houses) {
+        this.houses = houses;
+    }
+
+  
+    
+    public Community(String name) {
+        this.name = name;
+    //    houses = new HashSet<>();
+    }
+   
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Hospital> getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Set<Hospital> hospital) {
+        this.hospital = hospital;
+    }
+    
+
+    
+}
