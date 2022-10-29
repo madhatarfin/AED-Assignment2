@@ -1,0 +1,107 @@
+package model;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class Encounter {
+    public static String getAppointment;
+    public static String getChiefComplaint;
+    EncounterHistory history;
+    String visitDate;
+    PatientProfile patient;
+    Encounter followUp;
+    String patientId;
+    double temperature;
+    double pulse;
+    double oxygen;
+
+
+    public Encounter(String patientId,Double temperature, double pulse, double oxygen){
+        this.patientId = patientId;
+        this.temperature = temperature;
+        this.pulse = pulse;
+        this.oxygen = oxygen;
+    }
+
+    Encounter() {
+        System.out.println("Patient ID:" + patientId);
+    }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    public double getPulse() {
+        return pulse;
+    }
+
+    public void setPulse(double pulse) {
+        this.pulse = pulse;
+    }
+
+    public double getOxygen() {
+        return oxygen;
+    }
+
+    public void setOxygen(double oxygen) {
+        this.oxygen = oxygen;
+    }
+
+    
+    public EncounterHistory getHistory() {
+        return history;
+    }
+
+    public void setHistory(EncounterHistory history) {
+        this.history = history;
+    }
+
+    public String getVisitDate() {
+        return visitDate;
+    }
+
+    public void setVisitDate(String visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public void setPatient(PatientProfile patient) {
+        this.patient = patient;
+    }
+
+    public Encounter getFollowUp() {
+        return followUp;
+    }
+
+    public void setFollowUp(Encounter followUp) {
+        this.followUp = followUp;
+    }
+
+    public void addFollowup(Encounter e){
+        followUp = e;
+    }
+
+
+    private PatientProfile getPatient(){
+
+        return history.getPatient();
+    }
+    
+    @Override
+    public String toString(){
+        return patientId;
+    }
+    
+}
