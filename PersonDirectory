@@ -1,0 +1,43 @@
+xpackage model;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class PersonDirectory {
+    Set<Person> persons;
+
+    public PersonDirectory() {
+        Hospital hospital;
+        persons = new HashSet<Person>();
+
+    }
+    public PersonDirectory(Hospital h){
+        persons = new HashSet<Person>();
+        Hospital hospital = h;
+    }
+
+    public Person newPerson(String name, String dateOfBirth) {
+
+        Person p = new Person(name, dateOfBirth);
+        persons.add(p);
+        return p;
+    }
+
+   /* public Person findPerson(String id) {
+
+        for (Person p : persons) {
+
+            if (p.isMatch(id)) {
+                return p;
+            }
+        }
+        return null; // not found after going through the whole list
+    }*/
+    
+}
+      
