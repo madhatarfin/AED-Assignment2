@@ -1,0 +1,53 @@
+package model;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class VitalSigns {
+    private Double temperature;
+        private Double pressure;
+        private Double diabetes;
+        private int age;
+       
+
+        public VitalSigns(Double temperature, Double pressure, Double Diabetes, int age){
+            this.temperature = temperature;
+            this.pressure = pressure;
+            this.diabetes = diabetes;
+            this.age = age;
+        }
+
+    public Double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
+    }
+
+    public Double getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(Double pressure) {
+        this.pressure = pressure;
+    }
+
+    public Double getDiabetes() {
+        return diabetes;
+    }
+
+    public void setDiabetes(Double diabetes) {
+        this.diabetes = diabetes;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+}
