@@ -1,0 +1,37 @@
+package model;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class PatientProfile {
+    private PatientDirectory directory;
+    private Person person;
+    private EncounterHistory history;
+
+    public PatientProfile(PatientDirectory directory, Person person) {
+        this.directory = directory;
+        this.person = person;
+        history = new EncounterHistory(this);
+    }
+
+ //   public Encounter newEncounter(String vd) {
+  //      Encounter e = history.newEncounter(vd);
+   //     return e;
+   // }
+
+    public String getPatientName() {
+        return this.getPatientName();
+
+    }
+
+    public String  getID() {
+        return this.getID();
+
+    }
+    public void printPatient(){
+        //System.out.println(this.person.printID() + ":" + this.person.printName());
+        System.out.println(this.getPatientName());
+    }
+    
+}
