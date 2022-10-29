@@ -1,0 +1,49 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class EncounterHistory {
+    public PatientProfile patient;
+    public Set<Encounter> encounterList;
+    private Set<Encounter> history2;
+
+    public EncounterHistory (PatientProfile p){
+        patient = p;
+        encounterList = new HashSet<Encounter>();
+        this.history2 = new HashSet<Encounter>();
+    }
+
+    public EncounterHistory() {
+        this.history2 = new HashSet<Encounter>();
+    }
+
+    public Set<Encounter> getHistory() {
+        return history2;
+    }
+    
+    public PatientProfile getPatient() {
+        return patient;
+    }
+   // public Encounter newEncounter(String date){
+     //   Encounter encounter = new Encounter(this, date);
+       // encounterList.add(encounter);
+       // return encounter;
+    //}
+    public Encounter addNewEncounter(){
+        Encounter newEncounter = new Encounter();
+        history2.add(newEncounter);
+        return newEncounter;
+    }
+        
+    public void deleteEncounter(Encounter e) {
+        history2.remove(e);
+    
+    }
+    
+}
