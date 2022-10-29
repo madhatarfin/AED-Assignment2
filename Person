@@ -1,0 +1,66 @@
+package model;
+
+import java.util.Objects;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class Person {
+    
+    String id;
+    public String name;
+    private String dateOfBirth;
+    PersonDirectory directory;
+    public Person (String name, String dob){
+
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dob;
+
+    }
+    
+    public String getPersonId(){
+
+        return id;
+    }
+
+    public boolean isMatch(String id){
+        if(getPersonId().equals(id)) return true;
+        return false;
+    }
+    public String  printName(){
+        return this.name;
+
+    }
+    public String printID(){
+        return this.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Person other = (Person) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+}
