@@ -1,0 +1,38 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ *
+ * @author arfinansari
+ */
+public class PatientDirectory {
+
+    private Set<Patient> history1;
+    
+    public PatientDirectory(){
+        this.history1 = new HashSet<Patient>();
+       
+    }
+
+    public Set<Patient> getHistory1() {
+        return history1;
+    }
+
+    public void setHistory1(Set<Patient> history1) {
+        this.history1 = history1;
+    }
+
+    public Patient addNewPatient(String patientId, String patientName, int age){
+        Patient newPatient = new Patient();
+        history1.add(newPatient);
+        return newPatient;
+    }
+    
+    public void deletePatient(Patient p) {
+        history1.remove(p);
+    }
+    
+}
