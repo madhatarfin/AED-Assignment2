@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model;
 
 import java.util.Arrays;
@@ -19,78 +24,115 @@ public class DataSource {
         if (dataSource == null) {
             dataSource = new DataSource();
             //TODO: Initialize city data as per hospitals and doctors
-            City city1 = new City("Boston1");
-            Community community1=new Community("Com1");
-            city1.setCommunities(new HashSet(Arrays.asList(community1)));
+            City city1 = new City("Boston");
+            Community community1=new Community("The Spot");
+            Community community6=new Community("The Invite");
+            city1.setCommunities(new HashSet(Arrays.asList(community1, community6)));
             Hospital hospital1 = new Hospital("Apollo Hospital");
+            Hospital hospital6 = new Hospital("Critical Care Hospital");
+            Doctor doctor1=new Doctor();
+            doctor1.setAge(30);
+            doctor1.setDoctorName("Dr. Ram Murty");
+            doctor1.setGender("F");
+            doctor1.setSpecialist("Dermatalogist");
+            Doctor doctor2=new Doctor();
+            doctor2.setAge(45);
+            doctor2.setDoctorName("Dr. Hunes James");
+            doctor2.setGender("M");
+            doctor2.setSpecialist("Physician");
+            DoctorDirectory doctorDirectory1 = new DoctorDirectory();
+            doctorDirectory1.setDoctors(new HashSet(Arrays.asList(doctor1, doctor2)));
+            hospital1.setDoctorDirectory(doctorDirectory1);
+            hospital6.setDoctorDirectory(doctorDirectory1);
             community1.setHospital(new HashSet(Arrays.asList(hospital1)));
+            community6.setHospital(new HashSet(Arrays.asList(hospital6)));
             
-            City city2 = new City("New York1");
-            Community community2=new Community("Com2");
-            city2.setCommunities(new HashSet(Arrays.asList(community2)));
+            Patient patient1=new Patient();
+            patient1.setPatientId("AR12");
+            patient1.setPatientName("Arfin Ansari");
+            patient1.setAge(23);
+            
+            Patient patient2=new Patient();
+            patient2.setPatientId("FD45");
+            patient2.setPatientName("Harry Singh");
+            patient2.setAge(45);
+          
+            PatientDirectory patientDirectory1 = new PatientDirectory();
+            patientDirectory1.setPatient(new HashSet(Arrays.asList(patient1, patient2)));
+            hospital1.setPatientDirectory(patientDirectory1);
+            hospital6.setPatientDirectory(patientDirectory1);
+            
+            City city2 = new City("New York");
+            Community community2=new Community("The Hangout");
+            Community community7=new Community("Safe House");
+            city2.setCommunities(new HashSet(Arrays.asList(community2, community7)));
             Hospital hospital2 = new Hospital("Nursing Hospital");
+            Hospital hospital7 = new Hospital("We Care Hospital");
+            Doctor doctor7=new Doctor();
+            doctor7.setAge(35);
+            doctor7.setDoctorName("Dr. Jimmy Thomas");
+            doctor7.setGender("F");
+            doctor7.setSpecialist("Oncologist");
+            Doctor doctor8=new Doctor();
+            doctor8.setAge(47);
+            doctor8.setDoctorName("Dr. Shiv Dutt");
+            doctor8.setGender("M");
+            doctor8.setSpecialist("ENT Specialist");
+            DoctorDirectory doctorDirectory2 = new DoctorDirectory();
+            doctorDirectory1.setDoctors(new HashSet(Arrays.asList(doctor7, doctor8)));
+            hospital2.setDoctorDirectory(doctorDirectory2);
+            hospital7.setDoctorDirectory(doctorDirectory2);
             community2.setHospital(new HashSet(Arrays.asList(hospital2)));
+            community7.setHospital(new HashSet(Arrays.asList(hospital7)));
             
-            City city3 = new City("Chicago1");
-            Community community3=new Community("Com3");
-            city3.setCommunities(new HashSet(Arrays.asList(community3)));
+            City city3 = new City("Chicago");
+            Community community3=new Community("Meeting Point");
+            Community community8=new Community("Social Zone");
+            city3.setCommunities(new HashSet(Arrays.asList(community3, community8)));
             Hospital hospital3 = new Hospital("Best Hospital");
+            Hospital hospital8 = new Hospital("Holy SPirit Hospital");
+             Doctor doctor21=new Doctor();
+            doctor21.setAge(35);
+            doctor21.setDoctorName("Dr. Advani Sharma");
+            doctor21.setGender("F");
+            doctor21.setSpecialist("Therapist");
+            Doctor doctor22=new Doctor();
+            doctor22.setAge(47);
+            doctor22.setDoctorName("Dr. Rishi Kalyan");
+            doctor22.setGender("M");
+            doctor22.setSpecialist("Pediatricians");
+            DoctorDirectory doctorDirectory3 = new DoctorDirectory();
+            doctorDirectory1.setDoctors(new HashSet(Arrays.asList(doctor21, doctor22)));
+            hospital3.setDoctorDirectory(doctorDirectory3);
+            hospital8.setDoctorDirectory(doctorDirectory3);
             community3.setHospital(new HashSet(Arrays.asList(hospital3)));
+            community8.setHospital(new HashSet(Arrays.asList(hospital8)));
             
-            City city4 = new City("Washington1");
-            Community community4 =new Community("Com4");
-            city4.setCommunities(new HashSet(Arrays.asList(community4)));
+            
+            City city4 = new City("Washington");
+            Community community4 =new Community("The Space");
+            Community community9 =new Community("Friends Club");
+            city4.setCommunities(new HashSet(Arrays.asList(community4, community9)));
             Hospital hospital4 = new Hospital("State Hospital");
+            Hospital hospital9 = new Hospital("Tremon Hospital");
+            Doctor doctor25=new Doctor();
+            doctor25.setAge(48);
+            doctor25.setDoctorName("Dr. Prem Gupta");
+            doctor25.setGender("F");
+            doctor25.setSpecialist("Therapist");
+            Doctor doctor26=new Doctor();
+            doctor26.setAge(66);
+            doctor26.setDoctorName("Dr. Tim Rebecca");
+            doctor26.setGender("M");
+            doctor26.setSpecialist("Pediatricians");
+            DoctorDirectory doctorDirectory4 = new DoctorDirectory();
+            doctorDirectory4.setDoctors(new HashSet(Arrays.asList(doctor25, doctor26)));
+            hospital4.setDoctorDirectory(doctorDirectory4);
+            hospital9.setDoctorDirectory(doctorDirectory4);
             community4.setHospital(new HashSet(Arrays.asList(hospital4)));
+            community9.setHospital(new HashSet(Arrays.asList(hospital9)));
             
-            DoctorDirectory h = hospital1.getDoctorDirectory();
-            Doctor doctor = h.addNewDoctor("Arf", 34, "M", "Pediatricians");
-            Doctor doctor1 = h.addNewDoctor("Tim", 29, "M", "Neurologists");
-            Doctor doctor2 = h.addNewDoctor("Jim", 45, "F", "Radiologists");
-            Doctor doctor3 = h.addNewDoctor("Mike", 68, "F", "Family physicians");
-            
-            
-            DoctorDirectory h1 = hospital2.getDoctorDirectory();
-            Doctor doctor4 = h1.addNewDoctor("Tony", 34, "F", "Pediatricians");
-            Doctor doctor5 = h1.addNewDoctor("Timothy", 34, "M", "Pediatricians");
-            Doctor doctor6 = h1.addNewDoctor("June", 34, "F", "Pediatricians");
-            Doctor doctor7 = h1.addNewDoctor("April", 34, "M", "Pediatricians");
-            
-            DoctorDirectory h2 = hospital3.getDoctorDirectory();
-            Doctor doctor8 = h2.addNewDoctor("Johny", 34, "M", "Pediatricians");
-            Doctor doctor9 = h2.addNewDoctor("Christy", 34, "F", "Pediatricians");
-            Doctor doctor10 = h2.addNewDoctor("Mandy", 34, "F", "Pediatricians");
-            Doctor doctor11 = h2.addNewDoctor("Joe", 34, "M", "Pediatricians");
-            
-            DoctorDirectory h3 = hospital4.getDoctorDirectory();
-            Doctor doctor12 = h3.addNewDoctor("Ricky", 34, "M", "Pediatricians");
-            Doctor doctor13 = h3.addNewDoctor("Sean", 34, "M", "Pediatricians");
-            Doctor doctor14 = h3.addNewDoctor("Juan", 34, "F", "Pediatricians");
-            Doctor doctor15 = h3.addNewDoctor("Tracy", 34, "F", "Pediatricians");
-            
-            PatientDirectory pd = hospital1.getPatientDirectory();
-            Patient patient = pd.addNewPatient("PI1", "Cindy", 23);
-            Patient patient1 = pd.addNewPatient("PI2", "Terrace", 80);
-            Patient patient2 = pd.addNewPatient("PI3", "Judy", 60);
-            Patient patient3 = pd.addNewPatient("PI4", "Judy", 60);
-            
-            PatientDirectory pd1 = hospital2.getPatientDirectory();
-            Patient patient4 = pd1.addNewPatient("PI1", "Cindy", 23);
-            Patient patient5 = pd1.addNewPatient("PI2", "Terrace", 80);
-            Patient patient6 = pd1.addNewPatient("PI3", "Judy", 60);
-            Patient patient7 = pd1.addNewPatient("PI4", "Judy", 60);
-            
-            PatientDirectory pd2 = hospital3.getPatientDirectory();
-            Patient patient8 = pd2.addNewPatient("PI1", "Cindy", 23);
-            Patient patient9 = pd2.addNewPatient("PI2", "Terrace", 80);
-            Patient patient10 = pd2.addNewPatient("PI3", "Judy", 60);
-            Patient patient11 = pd2.addNewPatient("PI4", "Judy", 60);
-            
-            PatientDirectory pd3 = hospital4.getPatientDirectory();
-            Patient patient12 = pd3.addNewPatient("PI1", "Cindy", 23);
-            Patient patient13 = pd3.addNewPatient("PI2", "Terrace", 80);
-            Patient patient14 = pd3.addNewPatient("PI3", "Judy", 60);
-            Patient patient15 = pd3.addNewPatient("PI4", "Judy", 60);
+
             
             
             
